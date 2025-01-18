@@ -1,6 +1,7 @@
 import Sidebar from "./Sidebar";
 import Hero from "./Hero";
 import Biography from "../Biography/Biography";
+import Skills from "../Biography/Skills";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <Sidebar />
       <div className="flex-1 bg-gray-900 text-white">
         <Hero />
-        <Biography />
+        {/* <Biography /> */}
+        <Skills />
       </div>
     </div>
   );
