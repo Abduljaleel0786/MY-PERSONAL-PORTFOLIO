@@ -2,6 +2,7 @@ import Sidebar from "./Sidebar";
 import Hero from "./Hero";
 import Biography from "../Biography/Biography";
 import Skills from "../Biography/Skills";
+import Certificates from "../Biography/Certificates";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
       <div className="flex-1 bg-gray-900 text-white">
         <Hero />
         {/* <Biography /> */}
-        <Skills />
+        {/* <Skills /> */}
+        <Certificates />
       </div>
     </div>
   );
