@@ -85,6 +85,12 @@ const Sidebar = () => {
       <div className="lg:hidden flex-1">
         {/* Mobile Menu Icon */}
         <div className="p-4 bg-gray-800 text-end sticky top-0 z-50">
+        <div className="flex flex-wrap gap-4">
+        <p>+923045199010
+
+        </p>
+        <p>ijazierpu@gmail.com</p>
+      </div>
           <MenuIcon
             onClick={toggleSidebar}
             className="text-white cursor-pointer"
@@ -97,8 +103,10 @@ const Sidebar = () => {
             isOpen ? "translate-x-0" : "-translate-x-full"
           } fixed top-0 left-0 w-56 h-screen bg-gradient-to-b from-[#0c0c14] via-[#1a1a22] to-[#0c0c14] text-white transition-transform transform z-40`}
         >
+          
           {/* Close Icon */}
           <div className="p-4 text-right">
+            
             <CloseIcon
               onClick={toggleSidebar}
               className="text-white cursor-pointer"

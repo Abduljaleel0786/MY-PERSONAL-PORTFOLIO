@@ -4,6 +4,9 @@ import React, { useEffect } from "react";
 import Typed from "typed.js"; // Import Typed.js
 import Image from "next/image";
 import Profile from "./../Images/profile.png"; // Ensure the correct relative path
+import PhoneIcon from "@mui/icons-material/Phone"; // MUI Phone icon
+import MailIcon from "@mui/icons-material/Mail"; // MUI Mail icon
+import { Icon } from "@iconify/react"; // Import Iconify icon component
 
 const Hero = () => {
   useEffect(() => {
@@ -24,16 +27,19 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between h-screen bg-gray-900 text-white px-6 lg:px-16">
+    <div className="flex flex-col lg:flex-row items-center justify-between bg-zinc-950 text-white px-6 lg:px-16 lg:py-16">
       {/* Text Section */}
-     
       <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2">
-      <div className="flex flex-wrap gap-4">
-        <p>+923045199010
+        <div className="flex flex-wrap gap-4 mb-4">
+          {/* MUI Icons for phone and email */}
+          <p className="flex items-center gap-2 p-2 text-yellow-400">
+            <PhoneIcon /> +923045199010
+          </p>
+          <p className="flex items-center gap-2 p-2 text-yellow-400">
+            <MailIcon /> ijazierpu@gmail.com
+          </p>
 
-        </p>
-        <p>ijazierpu@gmail.com</p>
-      </div>
+        </div>
         <p className="text-lg text-gray-400">Hi, My Name is</p>
         <h1 className="text-5xl sm:text-6xl font-extrabold mt-2 text-white">
           Abdul Jaleel
@@ -72,4 +78,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
