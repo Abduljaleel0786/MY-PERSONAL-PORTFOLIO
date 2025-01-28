@@ -2,56 +2,69 @@
 
 import React, { useEffect } from "react";
 import Typed from "typed.js"; // Import Typed.js
-import Profile from '../Images/Profile.png'; 
+import Image from "next/image";
+import Profile from "./../Images/profile.png"; // Ensure the correct relative path
 
 const Hero = () => {
   useEffect(() => {
     // Initialize Typed.js
-    const options = {
-      strings: [
-        "Frontend Developer",
-        "React Developer",
-        "Next.js Developer"
-      ], // Multiple strings to type sequentially
-      typeSpeed: 100, 
-      backSpeed: 50, 
-      backDelay: 1000, 
-      startDelay: 500, // Delay before typing starts
-      loop: true, // Loop the typing effect
-    };
-    const typed = new Typed(".typed-text", options); // Apply the typing effect to the element with class .typed-text
+    const typed = new Typed(".typed-text", {
+      strings: ["Frontend Developer", "React Developer", "Next.js Developer"], // Text to type
+      typeSpeed: 70, // Speed of typing
+      backSpeed: 50, // Speed of deleting
+      backDelay: 1500, // Delay before deleting
+      startDelay: 500, // Initial delay before typing starts
+      loop: true, // Infinite loop
+    });
 
+    // Cleanup Typed.js instance on component unmount
     return () => {
-      typed.destroy(); // Clean up when the component unmounts
+      typed.destroy();
     };
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center h-screen bg-gray-800 text-white px-4">
+    <div className="flex flex-col lg:flex-row items-center justify-between h-screen bg-gray-900 text-white px-6 lg:px-16">
       {/* Text Section */}
-      <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2 px-6">
-        <p className="text-lg text-gray-400">Hi, My Name is</p>
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mt-2">Abdul Jaleel</h1>
-        <h2 className="text-xl sm:text-2xl text-orange-500 mt-2">
-          <span className="typed-text font-bold"></span> {/* This will display the typed text */}
-        </h2>
-        <p className="text-gray-300 mt-4 max-w-xl">
-          Experienced Software Engineer with a strong focus on React/Next.js, Node.js, and TypeScript. Adept at creating cutting-edge Web Applications and delivering scalable, high-performance solutions.
-        </p>
-        <button className="mt-6 px-6 py-3 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition">
-          Download CV
-        </button>
+     
+      <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2">
+      <div className="flex flex-wrap gap-4">
+        <p>+923045199010
 
-       
+        </p>
+        <p>ijazierpu@gmail.com</p>
+      </div>
+        <p className="text-lg text-gray-400">Hi, My Name is</p>
+        <h1 className="text-5xl sm:text-6xl font-extrabold mt-2 text-white">
+          Abdul Jaleel
+        </h1>
+        <h2 className="text-2xl sm:text-3xl text-orange-500 mt-4 font-semibold">
+          <span className="typed-text"></span>
+        </h2>
+        <p className="text-gray-300 mt-6 max-w-xl leading-relaxed">
+          Experienced Front-End Developer with expertise in React.js, Next.js,
+          JavaScript, HTML, CSS, Bootstrap, and Tailwind CSS.
+          I specialize in building dynamic, fully responsive web applications
+          with modern user interfaces and delivering scalable, high-performance
+          front-end solutions.
+        </p>
+        <a
+          href="/path/to/cv.pdf"
+          download
+          className="mt-8 px-8 py-3 bg-orange-500 text-white font-medium text-lg rounded-lg shadow-md hover:bg-orange-600 transition-all duration-300"
+        >
+          Download CV
+        </a>
       </div>
 
       {/* Image Section */}
-      <div className="lg:w-1/2 mt-6 lg:mt-0 flex items-center justify-center">
-      <image width={100} height={100} src={Profile} alt='profile'/>
-        <img
+      <div className="lg:w-1/2 mt-10 lg:mt-0 flex items-center justify-center">
+        <Image
           src={Profile}
-          alt="Profile"
-          className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover shadow-lg " 
+          alt="A professional portrait of Abdul Jaleel"
+          width={320}
+          height={320}
+          className="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover shadow-lg"
         />
       </div>
     </div>
@@ -59,3 +72,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

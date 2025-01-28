@@ -1,67 +1,62 @@
+
 import React from 'react';
-import Profile from '../Images/Profile.png';
+import Profile from '../Images/profile.png';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-const getRandomColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-};
+import Image from "next/image";
 
 const Biography = () => {
-  const randomBorderColor = getRandomColor(); // Generate random color for border
-
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center bg-gray-800 text-white px-6 py-12">
+    <div className="flex flex-col lg:flex-row items-center justify-center bg-gray-900 text-white px-6 py-12">
       {/* Image Section */}
-      <div className="lg:w-1/3 mt-6 lg:mt-0 flex flex-col items-center justify-center mb-8 lg:mb-0">
-        <div className="relative">
-          <img
+      <div className="lg:w-1/3 mt-6 lg:mt-0 flex flex-col items-center justify-center mb-8 lg:mb-0 relative">
+        {/* Profile Image with Background */}
+        <div className="relative flex items-center justify-center bg-yellow-500 rounded-full w-44 h-44 lg:w-80 lg:h-80 shadow-lg">
+          <Image
+            width={200}
+            height={200}
             src={Profile}
-            alt="Profile"
-            className="w-40 h-40 lg:w-80 lg:h-80 rounded-full object-cover shadow-lg"
-            style={{ border: `4px solid ${randomBorderColor}` }} // Apply random border color
+            alt="Profile Image"
+            className="w-40 h-40 lg:w-72 lg:h-72 rounded-full object-cover  transition-all"
           />
-          {/* LinkedIn and GitHub Icons */}
-          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-4">
+
+          {/* Icons inside the image on the right side */}
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <div className="bg-gray-600 p-2 rounded-full hover:bg-blue-600 transition-all">
-                <LinkedInIcon className="text-white text-2xl" />
+              <div className="bg-gray-600 p-2 rounded-full hover:bg-yellow-500 transition-all flex items-center justify-center">
+                <LinkedInIcon className="text-gray-900 hover:text-white text-2xl" />
               </div>
             </a>
             <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
-              <div className="bg-gray-600 p-2 rounded-full hover:bg-gray-600 transition-all">
-                <GitHubIcon className="text-white text-2xl" />
+              <div className="bg-gray-600 p-2 rounded-full hover:bg-yellow-500 transition-all flex items-center justify-center">
+                <GitHubIcon className="text-gray-900 hover:text-white text-2xl" />
               </div>
             </a>
           </div>
         </div>
+
         {/* Text below the image */}
-        <p className="mt-4 font-semibold text-lg text-center lg:text-left">Front End Web Developer</p>
-        <p className="font-bold text-xl text-center lg:text-left">Abdul Jaleel</p>
+        <p className="mt-6 font-semibold text-lg text-center">Front End Web Developer</p>
+        <p className="font-bold text-xl text-center">Abdul Jaleel</p>
       </div>
 
       {/* Text Section */}
       <div className="lg:w-1/2 text-center lg:text-left text-gray-300 mt-6 lg:mt-0">
-        <h1 className="text-5xl font-semibold mb-10">Biography</h1>
+        <h1 className="text-5xl font-semibold mb-8">Biography</h1>
         <p className="mb-6 text-sm lg:text-base">
-          Further, I have expanded my expertise to the backend, diving deep into the MERN stack, enabling me to build efficient server-side solutions. I thrive in collaborative settings, constantly seeking to innovate and deliver impactful solutions.
+          I am a passionate Front-End Web Developer with expertise in HTML, CSS, Bootstrap, JavaScript, React, Next.js, and Tailwind CSS. I specialize in designing fully responsive websites that work seamlessly across all devices. My goal is to create dynamic, engaging user experiences and to continuously evolve with the latest web development technologies. I am also experienced in collaborating in team environments to deliver high-quality solutions.
         </p>
 
         {/* Grid Section for Personal Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 text-sm lg:text-base">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 text-sm lg:text-base">
           <div>
             <p><strong>Name:</strong> Abdul Jaleel</p>
-            <p><strong>Age:</strong> 17 Years</p>
-            <p><strong>Address:</strong> Khairpur</p>
+            <p><strong>Age:</strong> 19 Years</p>
+            <p><strong>Address:</strong> Khairpur Mir's</p>
           </div>
           <div>
-            <p><strong>Phone:</strong> +923000000</p>
-            <p><strong>Email:</strong> aj@gmail.com</p>
+            <p><strong>Phone:</strong> +923091375325</p>
+            <p><strong>Email:</strong> abduljaleelxwave@gmail.com</p>
             <p><strong>Freelance:</strong> Available</p>
           </div>
         </div>
@@ -71,3 +66,5 @@ const Biography = () => {
 };
 
 export default Biography;
+
+
